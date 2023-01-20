@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <link href="/static/I.css" rel="stylesheet" />
+		<title>Interests </title>
+		<script type="text/javascript" src="static/processing.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+  
+		
+	</head>
+
+  <body>
+    <div class="sidenav">
+      <a href="{{ url_for('index') }}">Home</a>
+      <a href="{{ url_for('Interests') }}">Interests</a>
+      <a href="{{ url_for('User') }}">User & Problem Research Paper</a>
+      <a href="{{ url_for('Team') }}">Team Skit & User Scenario</a>
+      <a href="{{ url_for('IP') }}">Interactive Prototype</a>
+      <a href="{{ url_for('EP') }}">Evaluated Prototype</a>
+     
+        </div>
+        <div class="content">
+
+        <div class="container">
+            <h2>Interests</h2>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="thumbnail">
+                <a href="{{ url_for('processing') }}">
+                    <img src="static/processing.png" alt="processing" style="width:100%">
+                    <div class="caption">
+                      <p>Processing sketches</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="thumbnail">
+                    <a href="{{ url_for('music') }}">
+                    <img src="static/ele.png" alt="Nature" style="width:100%">
+                    <div class="caption">
+                      <p>music stuff</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="thumbnail">
+                    <a href="{{ url_for('electronics') }}">
+                    <img src="static/cir.jpg" alt="Fjords" style="width:100%">
+                    <div class="caption">
+                      <p>electronics</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                  <div class="thumbnail">
+                  <a href="{{ url_for('other') }}">
+                      <img src="static/man.jpg" alt="processing" style="width:100%">
+                      <div class="caption">
+                        <p>Other work</p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+
+          </div>
+          </div>
+          
+
+
+
+  </body>
+
+  </html>

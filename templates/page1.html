@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <link href="/static/style1.css" rel="stylesheet" />
+		<title>Interests </title>
+		<script type="text/javascript" src="static/processing.js"></script>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+  
+		
+	</head>
+
+  <body>
+    <div class="sidenav">
+ 
+      <a href="{{ url_for('Interests') }}">Interests</a>
+
+     
+        </div>
+
+  <div class="content">
+
+    <h2> Processing Sketches</h2>
+    <script type = "text/processing">
+
+
+
+void setup(){
+  size(400,400);
+  stroke(255);
+  background(192, 64, 0);
+}
+void draw(){
+  int x = 200;
+  int y = 200;
+  line(x, y, mouseX, mouseY);
+}
+</script>
+
+
+
+
+  <canvas data-processing-sources="burnt_orange.pde colors_1.pde"></canvas>
+<script type = "text/processing">
+void setup(){
+size(400,400);
+noStroke();
+background(#007E70);
+PFont font;
+  font= createFont("Roboto-Bold.ttf", 28);
+  textSize(12);
+  textFont(font);
+
+noLoop();
+
+}
+int x = 200;
+int y = 200;
+int sz = 30;
+ int xPos = 0;
+float yPos = 0;
+float yPos1 = 0;
+float yPos2 =0;
+
+void draw(){
+  background(#007E70);
+ 
+ if(xPos< 400){
+   xPos+=10;
+   yPos += random(-10,10);
+   yPos1 += random(-5,15);
+   yPos2 += random(-5,5);
+ }else{
+   xPos = 0;
+   yPos = random(0,400);
+   yPos1 = random(200,400);
+   yPos2 = random(0,400);
+}
+ 
+  fill(#6B00BE);
+  
+ ellipse(xPos, yPos, 40, 40);
+ ellipse(xPos, yPos1, 40, 40);
+ ellipse(xPos, yPos2, 40, 40);
+  fill(#FA8428);
+  rect(x, y, sz, sz, 40);
+
+if(dist(x, y, mouseX, mouseY) <sz){
+    stroke(255);
+
+    if(mousePressed == true){
+    strokeWeight(3);
+       x =mouseX;
+       y =mouseY;
+    }
+}else{
+  stroke(0);
+   text("Please press the orange circle", 11, 50);
+}
+}
+
+  void mousePressed() {
+  loop();  // Holding down the mouse activates looping
+}
+
+void mouseReleased() {
+  noLoop();  // Releasing the mouse stops looping draw()
+  text("Please press the orange circle", 11, 50);
+}   
+</script> 
+
+
+  <canvas data-processing-sources="burnt_orange.pde colors_1.pde"></canvas>
+
+
+<script type = "text/processing">
+void setup(){
+  background(255);
+  size(400,400);
+  frameRate(.3);
+}
+  void draw(){
+     background(255, random(0,50));
+  float xnoise = 0.0;
+  float ynoise = 0.0;
+  float inc = .04;
+  for(int y = 0; y< height; y++){
+   for(int x = 0; x<width; x++){
+    float gray = noise(xnoise, ynoise)*random(0,255);
+   
+    stroke(gray);
+    point(x,y);
+    xnoise = xnoise+inc;
+   }
+   xnoise = random(0,60);
+   ynoise = ynoise + inc;
+  }
+  ;
+   strokeWeight(random(4, 30));
+  stroke(240,255,0,180);
+ line(0,random(600),800,random(600));
+ line(0,random(600),800,random(600));
+ line(0,random(600),800,random(600));
+ line(0,random(600),800,random(600));
+ line(0,random(600),800,random(600));
+ line(0,random(600),800,random(600));
+    
+}
+
+
+void mouseMoved(){
+noStroke();
+fill(#00FF00);
+  ellipse(mouseX, mouseY, random(1.5,30),random(1.5,30));
+}
+
+ 
+
+ </script>
+ <canvas data-processing-sources="burnt_orange.pde colors_1.pde yoko_ono_line.pde"></canvas>
+
+<script type = "text/processing">
+void setup(){
+  size(400,400);
+
+
+
+}
+ 
+void draw(){
+  int count = 1;
+  background(#FFA900);
+for (int x = 100; x <=210; x+=5){
+  float n = norm(x, 0.0, 150);
+  float y = pow(n, 4);
+  count+=1;
+  y*=100;
+  noStroke();
+  point(x, y);
+  stroke(1);
+ noFill();
+ strokeWeight(count/10);
+  ellipse(x,y, .5+mouseX, .5+mouseY);
+}
+for (int x = 0; x <=500; x+=10){
+  float n = norm(x, 0.0, 150);
+  float y =  pow(n, .5);
+  y*=100;
+  noStroke();
+  point(x, y);
+  stroke(1);
+ noFill();
+ strokeWeight(1);
+  ellipse(x+20, y+30, .5+mouseX, 1+mouseY);
+}
+}
+//14DBB8, 1437DB
+
+ </script>
+ <canvas data-processing-sources="burnt_orange.pde colors_1.pde yoko_ono_line.pde"></canvas>
+
+
+
+</div>
+
+
+
+  </body>
+
+  </html>
